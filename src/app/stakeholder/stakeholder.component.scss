@@ -1,0 +1,35 @@
+.mat-card-stake {
+    margin: 10%;
+}
+
+.header-title {
+    text-align: center;
+    align-self: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.title-card {
+    color: #fe5000;
+    font-size: 45px;
+}
+
+.title-sep-section {
+    margin-top: 5%;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

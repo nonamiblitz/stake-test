@@ -1,0 +1,30 @@
+<mat-card class="mat-card-stake">
+  <mat-card-header class="header-title">
+    <mat-card-title class="title-card">เพิ่มรายชื่อ Stakeholder</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h1 class="title-sep-section">1. ข้อมูลทั่วไป</h1>
+    <form action="" method="post">
+      <div class="row">
+        <div class="column form-container">
+          <mat-label>ประภทของผู้มีส่วนได้ส่วนเสีย</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-form-field appearance="outline">
+            <input matInput placeholder="Placeholder" />
+          </mat-form-field> -->
+        </div>
+        <div class="column form-container">
+          <mat-label>ประภทย่อยของผู้มีส่วนได้ส่วนเสีย</mat-label>
+          <!-- <mat-form-field appearance="outline">
+            <input matInput placeholder="Placeholder" />
+          </mat-form-field> -->
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
