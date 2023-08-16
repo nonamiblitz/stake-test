@@ -4,25 +4,306 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <h1 class="title-sep-section">1. ข้อมูลทั่วไป</h1>
-    <form action="" method="post">
-      <div class="row">
-        <div class="column form-container">
-          <mat-label>ประภทของผู้มีส่วนได้ส่วนเสีย</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{ food.viewValue }}
-            </mat-option>
-          </mat-select>
-          <!-- <mat-form-field appearance="outline">
-            <input matInput placeholder="Placeholder" />
-          </mat-form-field> -->
+    <form>
+      <h1 class="title-sep-section">1. ข้อมูลทั่วไป</h1>
+      <div class="grid grid-cols-2 gap-4 grid-flow-row-dense">
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ประเภทของผู้มีส่วนได้ส่วนเสีย</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>กรุณาเลือกประเภทของผู้มีส่วนได้ส่วนเสีย</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
-        <div class="column form-container">
-          <mat-label>ประภทย่อยของผู้มีส่วนได้ส่วนเสีย</mat-label>
-          <!-- <mat-form-field appearance="outline">
-            <input matInput placeholder="Placeholder" />
-          </mat-form-field> -->
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>กรุณาเลือกประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ชื่อ Stakeholder</h2>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="ชื่อ Stakeholder" />
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ประเภทหน่วยงาน</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>กรุณาเลือกประเภทย่อยของหน่วยงาน</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 col-span-2 gap-1">
+          <h2>ที่อยู่ของหน่วยงาน</h2>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="ที่อยู่ของหน่วยงาน" />
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ระดับความสัมพันธ์ที่มีกับกฟน.</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>เลือกระดับ</mat-label>
+            <mat-select>
+              <mat-option value="option1">ดีมาก</mat-option>
+              <mat-option value="option2">ดีแหละ</mat-option>
+              <mat-option value="option3">ดี๊ดี</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ระดับความสัมพันธ์ที่คาดหวัง</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>เลือกระดับ</mat-label>
+            <mat-select>
+              <mat-option value="option1">ดีมาก</mat-option>
+              <mat-option value="option2">ดีแหละ</mat-option>
+              <mat-option value="option3">ดี๊ดี</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="objective-section">
+        <div class="grid grid-cols-2 gap-1">
+          <h2>จุดประสงค์ในการสร้างความสัมพันธ์</h2>
+          <button class="add-stroke-button" mat-stroked-button>
+            เพิ่มจุดประสงค์
+          </button>
+        </div>
+        <div class="grid gap-1 grid-rows-1">
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 1
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="จุดประสงค์ในการสร้างความสัมพันธ์" />
+            </mat-form-field>
+          </div>
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 2
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="จุดประสงค์ในการสร้างความสัมพันธ์" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="problem-section">
+        <div class="grid grid-cols-2 gap-1">
+          <h2>ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย / บริหารจัดการ</h2>
+          <button class="add-stroke-button" mat-stroked-button>
+            เพิ่มประเด็น
+          </button>
+        </div>
+        <div class="grid gap-1 grid-rows-1">
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 1
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
+            </mat-form-field>
+          </div>
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 2
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="problem-section">
+        <div class="grid grid-cols-2 gap-1">
+          <h2>ปัญหาอุปสรรคเรื่องร้องเรียนใน 5 ปีที่ผ่านมา</h2>
+          <button class="add-stroke-button" mat-stroked-button>
+            เพิ่มปัญหา
+          </button>
+        </div>
+        <div class="grid gap-1 grid-rows-1">
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 1
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
+            </mat-form-field>
+          </div>
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 2
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form>
+      <h1 class="title-sep-section">2. ความสามารถหรือข้อจำกัดผู้มีส่วนได้ส่วนเสีย</h1>
+      <div class="grid grid-cols-2 gap-4 grid-flow-row-dense">
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ประเภทของผู้มีส่วนได้ส่วนเสีย</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>กรุณาเลือกประเภทของผู้มีส่วนได้ส่วนเสีย</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>กรุณาเลือกประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ชื่อ Stakeholder</h2>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="ชื่อ Stakeholder" />
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ประเภทหน่วยงาน</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>กรุณาเลือกประเภทย่อยของหน่วยงาน</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 col-span-2 gap-1">
+          <h2>ที่อยู่ของหน่วยงาน</h2>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="ที่อยู่ของหน่วยงาน" />
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ระดับความสัมพันธ์ที่มีกับกฟน.</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>เลือกระดับ</mat-label>
+            <mat-select>
+              <mat-option value="option1">ดีมาก</mat-option>
+              <mat-option value="option2">ดีแหละ</mat-option>
+              <mat-option value="option3">ดี๊ดี</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <h2>ระดับความสัมพันธ์ที่คาดหวัง</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>เลือกระดับ</mat-label>
+            <mat-select>
+              <mat-option value="option1">ดีมาก</mat-option>
+              <mat-option value="option2">ดีแหละ</mat-option>
+              <mat-option value="option3">ดี๊ดี</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="objective-section">
+        <div class="grid grid-cols-2 gap-1">
+          <h2>จุดประสงค์ในการสร้างความสัมพันธ์</h2>
+          <button class="add-stroke-button" mat-stroked-button>
+            เพิ่มจุดประสงค์
+          </button>
+        </div>
+        <div class="grid gap-1 grid-rows-1">
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 1
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="จุดประสงค์ในการสร้างความสัมพันธ์" />
+            </mat-form-field>
+          </div>
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 2
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="จุดประสงค์ในการสร้างความสัมพันธ์" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="problem-section">
+        <div class="grid grid-cols-2 gap-1">
+          <h2>ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย / บริหารจัดการ</h2>
+          <button class="add-stroke-button" mat-stroked-button>
+            เพิ่มประเด็น
+          </button>
+        </div>
+        <div class="grid gap-1 grid-rows-1">
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 1
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
+            </mat-form-field>
+          </div>
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 2
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="problem-section">
+        <div class="grid grid-cols-2 gap-1">
+          <h2>ปัญหาอุปสรรคเรื่องร้องเรียนใน 5 ปีที่ผ่านมา</h2>
+          <button class="add-stroke-button" mat-stroked-button>
+            เพิ่มปัญหา
+          </button>
+        </div>
+        <div class="grid gap-1 grid-rows-1">
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 1
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
+            </mat-form-field>
+          </div>
+          <div class="div-choice-no">
+            <mat-label class="choice-label"
+              ><span style="color: red">* </span> 2
+            </mat-label>
+            <mat-form-field class="input-field-choice" appearance="outline">
+              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
+            </mat-form-field>
+          </div>
         </div>
       </div>
     </form>
