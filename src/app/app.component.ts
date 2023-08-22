@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faGoodreads } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-root',

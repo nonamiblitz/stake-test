@@ -5,6 +5,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   height: 100%;
@@ -12,7 +13,7 @@ body {
 body {
   margin: 0;
   font-family: "DB Ozone X" !important;
-  background-color: #e9954f;
+  background-color: #fa9262;
 }
 
 @font-face {
@@ -23,6 +24,7 @@ body {
 ::ng-deep body {
   font-family: "DB Ozone X" !important;
 }
+
 
 
 

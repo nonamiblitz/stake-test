@@ -3,309 +3,694 @@
     <mat-card-title class="title-card">เพิ่มรายชื่อ Stakeholder</mat-card-title>
   </mat-card-header>
   <mat-divider></mat-divider>
-  <mat-card-content>
-    <form>
+  <form class="w-full">
+    <!-- Section ข้อมูลทั่วไป -->
+    <mat-card-content>
       <h1 class="title-sep-section">1. ข้อมูลทั่วไป</h1>
       <div class="grid grid-cols-2 gap-4 grid-flow-row-dense">
         <div class="grid grid-rows-1 gap-1">
-          <h2>ประเภทของผู้มีส่วนได้ส่วนเสีย</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>กรุณาเลือกประเภทของผู้มีส่วนได้ส่วนเสีย</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{ food.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-stake">ประเภทของผู้มีส่วนได้ส่วนเสีย</label>
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="type-stake"
+          >
+            <option value="" disabled selected hidden>
+              เลือกประเภทของผู้มีส่วนได้ส่วนเสีย
+            </option>
+            <option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </option>
+          </select>
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>กรุณาเลือกประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{ food.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-substake">ประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</label>
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="type-substake"
+          >
+            <option value="" disabled selected hidden>
+              เลือกประเภทย่อยของผู้มีส่วนได้ส่วนเสีย
+            </option>
+            <option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </option>
+          </select>
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ชื่อ Stakeholder</h2>
-          <mat-form-field appearance="outline">
-            <input matInput placeholder="ชื่อ Stakeholder" />
-          </mat-form-field>
+          <label for="name-stake">ชื่อ Stakeholder</label>
+          <input
+            name="name-stake"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ชื่อ Stakeholder"
+          />
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ประเภทหน่วยงาน</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>กรุณาเลือกประเภทย่อยของหน่วยงาน</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{ food.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-org">ประเภทหน่วยงาน</label>
+          <select
+            class="border-1 rounded border-gray-300 w-full text-gray-900 mb-6 block w-full p-2"
+            name="type-org"
+          >
+            <option value="" disabled selected hidden>
+              เลือกประเภทหน่วยงาน
+            </option>
+            <option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </option>
+          </select>
         </div>
         <div class="grid grid-rows-1 col-span-2 gap-1">
-          <h2>ที่อยู่ของหน่วยงาน</h2>
-          <mat-form-field appearance="outline">
-            <input matInput placeholder="ที่อยู่ของหน่วยงาน" />
-          </mat-form-field>
+          <label for="address">ที่อยู่ของหน่วยงาน</label>
+          <input
+            name="address"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ที่อยู่ของหน่วยงาน"
+          />
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ระดับความสัมพันธ์ที่มีกับกฟน.</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>เลือกระดับ</mat-label>
-            <mat-select>
-              <mat-option value="option1">ดีมาก</mat-option>
-              <mat-option value="option2">ดีแหละ</mat-option>
-              <mat-option value="option3">ดี๊ดี</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-substake">ระดับความสัมพันธ์ที่มีกับกฟน</label>
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="type-substake"
+          >
+            <option value="" disabled selected hidden>
+              เลือกระดับความสัมพันธ์ที่มีกับกฟน
+            </option>
+            <option value="option1">ดีมาก</option>
+            <option value="option2">ดีแหละ</option>
+            <option value="option3">ดี๊ดี</option>
+          </select>
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ระดับความสัมพันธ์ที่คาดหวัง</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>เลือกระดับ</mat-label>
-            <mat-select>
-              <mat-option value="option1">ดีมาก</mat-option>
-              <mat-option value="option2">ดีแหละ</mat-option>
-              <mat-option value="option3">ดี๊ดี</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-substake">ระดับความสัมพันธ์ที่คาดหวัง</label>
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="type-substake"
+          >
+            <option value="" disabled selected hidden>
+              เลือกระดับความสัมพันธ์ที่คาดหวัง
+            </option>
+            <option value="option1">ดีมาก</option>
+            <option value="option2">ดีแหละ</option>
+            <option value="option3">ดี๊ดี</option>
+          </select>
         </div>
       </div>
       <div class="objective-section">
         <div class="grid grid-cols-2 gap-1">
-          <h2>จุดประสงค์ในการสร้างความสัมพันธ์</h2>
-          <button class="add-stroke-button" mat-stroked-button>
-            เพิ่มจุดประสงค์
-          </button>
+          <div class="col-start-1 col-end-3">
+            <label>
+              จุดประสงค์ในการสร้างความสัมพันธ์ /
+              บริหารจัดการกับผู้มีส่วนได้ส่วนเสีย
+            </label>
+          </div>
+          <div class="col-end-7 col-span-2">
+            <button class="add-stroke-button btn btn-outline">
+              เพิ่มจุดประสงค์
+            </button>
+          </div>
         </div>
-        <div class="grid gap-1 grid-rows-1">
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 1
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="จุดประสงค์ในการสร้างความสัมพันธ์" />
-            </mat-form-field>
-          </div>
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 2
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="จุดประสงค์ในการสร้างความสัมพันธ์" />
-            </mat-form-field>
-          </div>
+        <div class="flex gap-x-3 my-4">
+          <label class="choice-label"><span>* </span>1.</label>
+          <input
+            class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+            type="text"
+            required
+            placeholder="จุดประสงค์ในการสร้างความสัมพันธ์ / บริหารจัดการกับผู้มีส่วนได้ส่วนเสีย"
+          />
+        </div>
+        <div class="flex gap-x-3">
+          <label class="choice-label">2.</label>
+          <input
+            class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+            type="text"
+            required
+            placeholder="จุดประสงค์ในการสร้างความสัมพันธ์ / บริหารจัดการกับผู้มีส่วนได้ส่วนเสีย"
+          />
         </div>
       </div>
-      <div class="problem-section">
+      <div class="important-section my-4">
         <div class="grid grid-cols-2 gap-1">
-          <h2>ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย / บริหารจัดการ</h2>
-          <button class="add-stroke-button" mat-stroked-button>
-            เพิ่มประเด็น
-          </button>
+          <div class="col-start-1 col-end-3">
+            <label>
+              ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย (ปัญหา,อุปสรรค,ความต้องการ)
+            </label>
+          </div>
+          <div class="col-end-7 col-span-2">
+            <button class="add-stroke-button btn btn-outline">
+              เพิ่มประเด็น
+            </button>
+          </div>
         </div>
-        <div class="grid gap-1 grid-rows-1">
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 1
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
-            </mat-form-field>
-          </div>
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 2
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
-            </mat-form-field>
-          </div>
+        <div class="flex gap-x-3 my-4">
+          <label class="choice-label"><span>* </span>1.</label>
+          <input
+            class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+            type="text"
+            required
+            placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย"
+          />
+        </div>
+        <div class="flex gap-x-3">
+          <label class="choice-label">2.</label>
+          <input
+            class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+            type="text"
+            required
+            placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย"
+          />
         </div>
       </div>
-      <div class="problem-section">
+      <div class="problem-section my-4">
         <div class="grid grid-cols-2 gap-1">
-          <h2>ปัญหาอุปสรรคเรื่องร้องเรียนใน 5 ปีที่ผ่านมา</h2>
-          <button class="add-stroke-button" mat-stroked-button>
-            เพิ่มปัญหา
+          <div class="col-start-1 col-end-3">
+            <label>ปัญหาอุปสรรคเรื่องร้องเรียนใน 5 ปีที่ผ่านมา</label>
+          </div>
+          <div class="col-end-7 col-span-2">
+            <button class="add-stroke-button btn btn-outline">
+              เพิ่มปัญหา
+            </button>
+          </div>
+        </div>
+        <div class="flex gap-x-3 my-4">
+          <label class="choice-label"><span>* </span>1.</label>
+          <input
+            class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+            type="text"
+            required
+            placeholder="ปัญหาอุปสรรคเรื่องร้องเรียน"
+          />
+        </div>
+        <div class="flex gap-x-3">
+          <label class="choice-label">2.</label>
+          <input
+            class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+            type="text"
+            required
+            placeholder="ปัญหาอุปสรรคเรื่องร้องเรียน"
+          />
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <!-- Section ความสามารถหรือข้อจำกัด -->
+    <mat-card-content>
+      <h1 class="title-sep-section">
+        2. ความสามารถหรือข้อจำกัดผู้มีส่วนได้ส่วนเสีย
+      </h1>
+      <div class="grid grid-cols-3 gap-3 grid-flow-row-dense">
+        <div class="grid grid-rows-1 gap-1">
+          <label for="language-choice">ภาษาที่ใช้สื่อสาร</label>
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="language-choice"
+          >
+            <option value="" disabled selected hidden>
+              เลือกภาษาที่ใช้สื่อสาร
+            </option>
+            <option value="option1">ดีมาก</option>
+            <option value="option2">ดีแหละ</option>
+            <option value="option3">ดี๊ดี</option>
+          </select>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <label for="contact-date">วันที่ติดต่อได้</label>
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="contact-date"
+          >
+            <option value="" disabled selected hidden>
+              เลือกวันที่ติดต่อได้
+            </option>
+            <option value="option1">ดีมาก</option>
+            <option value="option2">ดีแหละ</option>
+            <option value="option3">ดี๊ดี</option>
+          </select>
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <label for="contact-time">เวลาที่ติดต่อได้</label>
+          <div class="flex">
+            <select
+              class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2 mr-1"
+              name="contact-time"
+            >
+              <option value="" disabled selected hidden>กรุณาเลือกเวลา</option>
+              <option value="option1">ดีมาก</option>
+              <option value="option2">ดีแหละ</option>
+              <option value="option3">ดี๊ดี</option>
+            </select>
+            <p style="font-size: 25px; align-self: center; height: 56px">ถึง</p>
+            <select
+              class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2 mr-1 ml-1"
+              name="type-substake"
+            >
+              <option value="" disabled selected hidden>กรุณาเลือกเวลา</option>
+              <option value="option1">ดีมาก</option>
+              <option value="option2">ดีแหละ</option>
+              <option value="option3">ดี๊ดี</option>
+            </select>
+            <p style="font-size: 25px; align-self: center; height: 56px">น.</p>
+          </div>
+        </div>
+        <div class="grid grid-rows-1 col-span-3 gap-1">
+          <label>ข้อจำกัดในการสื่อสาร</label>
+          <input
+            class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+            type="text"
+            required
+            placeholder="ข้อจำกัดในการสื่อสาร"
+          />
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <!-- Section 3 ข้อมูลผู้บริหารระดับสูงของหน่วยงาน -->
+    <mat-card-content>
+      <div class="grid grid-cols-2 gap-1">
+        <h1 class="title-sep-section col-start-1 col-end-3">
+          3. ข้อมูลผู้บริหารระดับสูงของหน่วยงาน
+        </h1>
+        <div class="col-end-7 col-span-2 my-4">
+          <button class="add-stroke-button btn btn-outline">
+            เพิ่มข้อมูลผู้บริหาร
           </button>
         </div>
-        <div class="grid gap-1 grid-rows-1">
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 1
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
-            </mat-form-field>
+      </div>
+      <div class="flex gap-x-3 my-4">
+        <label class="choice-label"><span>* </span>1.</label>
+        <div
+          class="grid grid-cols-2 gap-3 grid-flow-row-dense border-1 rounded-lg border-orange w-full p-6"
+        >
+          <div class="grid grid-rows-1 gap-1">
+            <label>ชื่อ-นามสกุล</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ชื่อ-นามสกุล"
+            />
           </div>
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 2
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
-            </mat-form-field>
+          <div class="grid grid-rows-1 gap-1">
+            <label>ตำแหน่ง</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ตำแหน่ง"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>หมายเลขโทรศัพท์</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="หมายเลขโทรศัพท์"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>อีเมล</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="อีเมล"
+            />
           </div>
         </div>
       </div>
-    </form>
-  </mat-card-content>
-  <mat-divider></mat-divider>
-  <mat-card-content>
-    <form>
-      <h1 class="title-sep-section">2. ความสามารถหรือข้อจำกัดผู้มีส่วนได้ส่วนเสีย</h1>
+      <div class="flex gap-x-3 my-4">
+        <label class="choice-label">2.</label>
+        <div
+          class="grid grid-cols-2 gap-3 grid-flow-row-dense border-1 rounded-lg border-orange w-full p-6"
+        >
+          <div class="grid grid-rows-1 gap-1">
+            <label>ชื่อ-นามสกุล</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ชื่อ-นามสกุล"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>ตำแหน่ง</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ตำแหน่ง"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>หมายเลขโทรศัพท์</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="หมายเลขโทรศัพท์"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>อีเมล</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="email"
+              required
+              placeholder="อีเมล"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <!-- Section 4 ข้อมูลผู้ประสานงาน -->
+    <mat-card-content>
+      <div class="grid grid-cols-2 gap-1">
+        <h1 class="title-sep-section col-start-1 col-end-3">
+          4. ข้อมูลผู้ประสานงาน
+        </h1>
+        <div class="col-end-7 col-span-2 my-4">
+          <button class="add-stroke-button btn btn-outline">
+            เพิ่มผู้ประสานงาน
+          </button>
+        </div>
+      </div>
+      <div class="flex gap-x-3 my-4">
+        <label class="choice-label"><span>* </span>1.</label>
+        <div
+          class="grid grid-cols-2 gap-3 grid-flow-row-dense border-1 rounded-lg border-orange w-full p-6"
+        >
+          <div class="grid grid-rows-1 gap-1">
+            <label>ชื่อ-นามสกุล</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ชื่อ-นามสกุล"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>ตำแหน่ง</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ตำแหน่ง"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>หมายเลขโทรศัพท์</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="หมายเลขโทรศัพท์"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>อีเมล</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="email"
+              required
+              placeholder="อีเมล"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-x-3 my-4">
+        <label class="choice-label">2.</label>
+        <div
+          class="grid grid-cols-2 gap-3 grid-flow-row-dense border-1 rounded-lg border-orange w-full p-6"
+        >
+          <div class="grid grid-rows-1 gap-1">
+            <label>ชื่อ-นามสกุล</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ชื่อ-นามสกุล"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>ตำแหน่ง</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ตำแหน่ง"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>หมายเลขโทรศัพท์</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="หมายเลขโทรศัพท์"
+            />
+          </div>
+          <div class="grid grid-rows-1 gap-1">
+            <label>อีเมล</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="อีเมล"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <!-- Section 5 บริบทของ Stakeholder -->
+    <mat-card-content>
+      <h1 class="title-sep-section">5. บริบทของ Stakeholder</h1>
+      <div class="grid grid-rows-1 gap-1">
+        <label for="role-stake">บทบาทต่อกฟน.</label>
+        <input
+          class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+          type="text"
+          required
+          placeholder="ระบุบทบาทต่อกฟน."
+        />
+      </div>
+      <div class="grid grid-cols-2 gap-1 my-4">
+        <div class="col-start-1 col-end-3">
+          <label
+            >บุคลากรของ กฟน.
+            ที่รับผิดชอบในการสร้างความสัมพันธ์ทั้งในอดีตและปัจจุบัน</label
+          >
+        </div>
+        <div class="col-end-7 col-span-2">
+          <button class="add-stroke-button btn btn-outline">
+            เพิ่มบุคลากร
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-1 gap-x-3 my-3">
+        <label class="choice-label"><span>* </span>1.</label>
+        <div class="grid grid-cols-3 gap-3 grid-flow-row-dense w-full">
+          <div class="grid grid-rows-1 gap-1">
+            <label> รหัสพนักงาน </label>
+            <div class="flex">
+              <div class="relative w-full">
+                <input
+                  class="appearance-ouline border-1 rounded-l-md rounded-r-lg w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+                  type="number"
+                  required
+                  placeholder="ระบุรหัสพนักงาน"
+                />
+                <button
+                  type="submit"
+                  class="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-white bg-[#FE5000] rounded-r-md border hover:bg-orange-700 focus:ring-4"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-rows-1 gap-1 col-span-2">
+            <label>ข้อมูลปัจจุบันของพนักงาน</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ข้อมูลปัจจุบันของพนักงาน"
+              disabled
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-1 gap-x-3 my-3">
+        <label class="choice-label">2.</label>
+        <div class="grid grid-cols-3 gap-3 grid-flow-row-dense w-full">
+          <div class="grid grid-rows-1 gap-1">
+            <label> รหัสพนักงาน </label>
+            <div class="flex">
+              <div class="relative w-full">
+                <input
+                  class="appearance-ouline border-1 rounded-l-md rounded-r-lg w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+                  type="number"
+                  required
+                  placeholder="ระบุรหัสพนักงาน"
+                />
+                <button
+                  type="submit"
+                  class="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-white bg-[#FE5000] rounded-r-md border hover:bg-orange-700 focus:ring-4"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-rows-1 gap-1 col-span-2">
+            <label>ข้อมูลปัจจุบันของพนักงาน</label>
+            <input
+              class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
+              type="text"
+              required
+              placeholder="ข้อมูลปัจจุบันของพนักงาน"
+              disabled
+            />
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <!-- Section 6 ช่องทางสื่อสาร -->
+    <mat-card-content>
+      <h1 class="title-sep-section">6. ช่องทางสื่อสาร</h1>
       <div class="grid grid-cols-2 gap-4 grid-flow-row-dense">
         <div class="grid grid-rows-1 gap-1">
-          <h2>ประเภทของผู้มีส่วนได้ส่วนเสีย</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>กรุณาเลือกประเภทของผู้มีส่วนได้ส่วนเสีย</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{ food.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-stake"
+            ><fa-icon [icon]="faGlobe" style="color: #fe5000"></fa-icon>
+            เว็ปไซต์</label
+          >
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="type-stake"
+          >
+            <option value="" disabled selected hidden>
+              เลือกประเภทของผู้มีส่วนได้ส่วนเสีย
+            </option>
+            <option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </option>
+          </select>
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>กรุณาเลือกประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{ food.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-substake"
+            ><i class="fa-solid fa-envelope" style="color: #fe5000"></i
+            >อีเมล</label
+          >
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="type-substake"
+          >
+            <option value="" disabled selected hidden>
+              เลือกประเภทย่อยของผู้มีส่วนได้ส่วนเสีย
+            </option>
+            <option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </option>
+          </select>
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ชื่อ Stakeholder</h2>
-          <mat-form-field appearance="outline">
-            <input matInput placeholder="ชื่อ Stakeholder" />
-          </mat-form-field>
+          <label for="name-stake">ชื่อ Stakeholder</label>
+          <input
+            name="name-stake"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ชื่อ Stakeholder"
+          />
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ประเภทหน่วยงาน</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>กรุณาเลือกประเภทย่อยของหน่วยงาน</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{ food.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-org">ประเภทหน่วยงาน</label>
+          <select
+            class="border-1 rounded border-gray-300 w-full text-gray-900 mb-6 block w-full p-2"
+            name="type-org"
+          >
+            <option value="" disabled selected hidden>
+              เลือกประเภทหน่วยงาน
+            </option>
+            <option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </option>
+          </select>
         </div>
         <div class="grid grid-rows-1 col-span-2 gap-1">
-          <h2>ที่อยู่ของหน่วยงาน</h2>
-          <mat-form-field appearance="outline">
-            <input matInput placeholder="ที่อยู่ของหน่วยงาน" />
-          </mat-form-field>
+          <label for="address">ที่อยู่ของหน่วยงาน</label>
+          <input
+            name="address"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ที่อยู่ของหน่วยงาน"
+          />
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ระดับความสัมพันธ์ที่มีกับกฟน.</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>เลือกระดับ</mat-label>
-            <mat-select>
-              <mat-option value="option1">ดีมาก</mat-option>
-              <mat-option value="option2">ดีแหละ</mat-option>
-              <mat-option value="option3">ดี๊ดี</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-substake">ระดับความสัมพันธ์ที่มีกับกฟน</label>
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="type-substake"
+          >
+            <option value="" disabled selected hidden>
+              เลือกระดับความสัมพันธ์ที่มีกับกฟน
+            </option>
+            <option value="option1">ดีมาก</option>
+            <option value="option2">ดีแหละ</option>
+            <option value="option3">ดี๊ดี</option>
+          </select>
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <h2>ระดับความสัมพันธ์ที่คาดหวัง</h2>
-          <mat-form-field appearance="outline">
-            <mat-label>เลือกระดับ</mat-label>
-            <mat-select>
-              <mat-option value="option1">ดีมาก</mat-option>
-              <mat-option value="option2">ดีแหละ</mat-option>
-              <mat-option value="option3">ดี๊ดี</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <label for="type-substake">ระดับความสัมพันธ์ที่คาดหวัง</label>
+          <select
+            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            name="type-substake"
+          >
+            <option value="" disabled selected hidden>
+              เลือกระดับความสัมพันธ์ที่คาดหวัง
+            </option>
+            <option value="option1">ดีมาก</option>
+            <option value="option2">ดีแหละ</option>
+            <option value="option3">ดี๊ดี</option>
+          </select>
         </div>
       </div>
-      <div class="objective-section">
-        <div class="grid grid-cols-2 gap-1">
-          <h2>จุดประสงค์ในการสร้างความสัมพันธ์</h2>
-          <button class="add-stroke-button" mat-stroked-button>
-            เพิ่มจุดประสงค์
-          </button>
-        </div>
-        <div class="grid gap-1 grid-rows-1">
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 1
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="จุดประสงค์ในการสร้างความสัมพันธ์" />
-            </mat-form-field>
-          </div>
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 2
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="จุดประสงค์ในการสร้างความสัมพันธ์" />
-            </mat-form-field>
-          </div>
-        </div>
-      </div>
-      <div class="problem-section">
-        <div class="grid grid-cols-2 gap-1">
-          <h2>ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย / บริหารจัดการ</h2>
-          <button class="add-stroke-button" mat-stroked-button>
-            เพิ่มประเด็น
-          </button>
-        </div>
-        <div class="grid gap-1 grid-rows-1">
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 1
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
-            </mat-form-field>
-          </div>
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 2
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
-            </mat-form-field>
-          </div>
-        </div>
-      </div>
-      <div class="problem-section">
-        <div class="grid grid-cols-2 gap-1">
-          <h2>ปัญหาอุปสรรคเรื่องร้องเรียนใน 5 ปีที่ผ่านมา</h2>
-          <button class="add-stroke-button" mat-stroked-button>
-            เพิ่มปัญหา
-          </button>
-        </div>
-        <div class="grid gap-1 grid-rows-1">
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 1
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
-            </mat-form-field>
-          </div>
-          <div class="div-choice-no">
-            <mat-label class="choice-label"
-              ><span style="color: red">* </span> 2
-            </mat-label>
-            <mat-form-field class="input-field-choice" appearance="outline">
-              <input matInput placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย" />
-            </mat-form-field>
-          </div>
-        </div>
-      </div>
-    </form>
-  </mat-card-content>
+    </mat-card-content>
+  </form>
 </mat-card>

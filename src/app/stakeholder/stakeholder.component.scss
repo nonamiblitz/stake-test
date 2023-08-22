@@ -1,11 +1,11 @@
 $orange: #fe5000;
 $brown: #862633;
+$label_color: #6c757d;
 ::ng-deep mat-mdc-card-title {
   font-family: "DB Ozone X" !important;
-
 }
 
-h2 {
+label {
   color: $brown;
   font-size: 30px;
 }
@@ -16,7 +16,8 @@ h1 {
 }
 
 .mat-card-stake {
-  margin: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .header-title {
@@ -29,14 +30,14 @@ h1 {
 .title-card {
   color: $orange;
   font-size: 45px;
-  font-family: 'DB Ozone X' !important;
+  font-family: "DB Ozone X" !important;
   font-weight: bold !important;
 }
 
 .title-sep-section {
-  margin-top: 2%;
+  margin-top: 24px;
   font-weight: bold;
-  margin-bottom: 2%;
+  margin-bottom: 24px;
 }
 .form-container {
   display: flex;
@@ -55,13 +56,9 @@ h1 {
   clear: both;
 }
 
-::ng-deep .mdc-notched-outline__notch {
-  border-right: 0px !important;
-}
-
 ::ng-deep mat-card-content {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .div-sep {
@@ -69,23 +66,50 @@ h1 {
 }
 
 .add-stroke-button {
-  width: 30% !important;
+  width: 150px !important;
   border-color: $orange !important;
   color: $orange !important;
-  left: 70%;
+  font-weight: medium;
+  font-size: 18px;
 }
 
 .choice-label {
   color: $brown;
   font-size: 30px;
-  width: 100px;
+  width: 40px;
+  text-align: end;
 }
 
-.div-choice-no{
-  margin-top: 10px ;
+.div-choice-no {
+  margin-top: 10px;
 }
 
-.input-field-choice{
-  width: 96.2%;
-  margin-left: 19px;
+.input-field-choice {
+  width: 96.5%;
+  margin-left: 10px;
+}
+
+span {
+  color: red;
+}
+
+mat-divider {
+  border-top-color: $brown !important;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 60px;
+}
+
+.partition-selector {
+  width: 50% !important;
+}
+
+input,
+select {
+  font-size: 20px;
+  max-height: 44px;
+}
+
+.border-orange {
+  border-color: $orange;
 }
