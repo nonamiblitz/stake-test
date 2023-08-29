@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { NgFor } from '@angular/common';
-import {MatButtonModule} from '@angular/material/button';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGlobe,
+  faInfoCircle,
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
+import { faFacebook,faTwitter,faLine } from '@fortawesome/free-brands-svg-icons';
 
 interface Food {
   value: string;
@@ -19,7 +17,7 @@ interface Food {
   styleUrls: ['./stakeholder.component.scss'],
 })
 export class StakeholderComponent {
-  faGlobe = faGlobe;
+ 
 
   foods: Food[] = [
     { value: 'steak-0', viewValue: 'Steak' },

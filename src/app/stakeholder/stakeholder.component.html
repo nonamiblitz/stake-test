@@ -11,7 +11,7 @@
         <div class="grid grid-rows-1 gap-1">
           <label for="type-stake">ประเภทของผู้มีส่วนได้ส่วนเสีย</label>
           <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            class="border-1 rounded border-gray-300 text-gray-900 block w-full p-2"
             name="type-stake"
           >
             <option value="" disabled selected hidden>
@@ -21,11 +21,20 @@
               {{ food.viewValue }}
             </option>
           </select>
+          <div class="flex justify-end ...">
+            <button>
+              <fa-icon
+                [icon]="['fas', 'info-circle']"
+                style="color: #fe5000; size: 16px"
+              ></fa-icon>
+              ดูรายละเอียดประเภท
+            </button>
+          </div>
         </div>
         <div class="grid grid-rows-1 gap-1">
           <label for="type-substake">ประเภทย่อยของผู้มีส่วนได้ส่วนเสีย</label>
           <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            class="border-1 rounded border-gray-300 text-gray-900 mb-7 block w-full p-2"
             name="type-substake"
           >
             <option value="" disabled selected hidden>
@@ -71,10 +80,10 @@
           />
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <label for="type-substake">ระดับความสัมพันธ์ที่มีกับกฟน</label>
+          <label for="relationship">ระดับความสัมพันธ์ที่มีกับกฟน</label>
           <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
-            name="type-substake"
+            class="border-1 rounded border-gray-300 text-gray-900 block w-full p-2"
+            name="relationship"
           >
             <option value="" disabled selected hidden>
               เลือกระดับความสัมพันธ์ที่มีกับกฟน
@@ -83,12 +92,21 @@
             <option value="option2">ดีแหละ</option>
             <option value="option3">ดี๊ดี</option>
           </select>
+          <div class="flex justify-end ...">
+            <button>
+              <fa-icon
+                [icon]="['fas', 'info-circle']"
+                style="color: #fe5000; size: 16px"
+              ></fa-icon>
+              ดูรายละเอียดความสัมพันธ์
+            </button>
+          </div>
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <label for="type-substake">ระดับความสัมพันธ์ที่คาดหวัง</label>
+          <label for="ex-relationship">ระดับความสัมพันธ์ที่คาดหวัง</label>
           <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
-            name="type-substake"
+            class="border-1 rounded border-gray-300 text-gray-900 block w-full p-2"
+            name="ex-relationship"
           >
             <option value="" disabled selected hidden>
               เลือกระดับความสัมพันธ์ที่คาดหวัง
@@ -97,9 +115,18 @@
             <option value="option2">ดีแหละ</option>
             <option value="option3">ดี๊ดี</option>
           </select>
+          <div class="flex justify-end ...">
+            <button>
+              <fa-icon
+                [icon]="['fas', 'info-circle']"
+                style="color: #fe5000; size: 16px"
+              ></fa-icon>
+              ดูรายละเอียดความสัมพันธ์
+            </button>
+          </div>
         </div>
       </div>
-      <div class="objective-section">
+      <div class="objective-section my-3">
         <div class="grid grid-cols-2 gap-1">
           <div class="col-start-1 col-end-3">
             <label>
@@ -114,19 +141,23 @@
           </div>
         </div>
         <div class="flex gap-x-3 my-4">
-          <label class="choice-label"><span>* </span>1.</label>
+          <label class="choice-label" for="objective-1"
+            ><span>* </span>1.</label
+          >
           <input
             class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
             type="text"
+            name="objective-1"
             required
             placeholder="จุดประสงค์ในการสร้างความสัมพันธ์ / บริหารจัดการกับผู้มีส่วนได้ส่วนเสีย"
           />
         </div>
         <div class="flex gap-x-3">
-          <label class="choice-label">2.</label>
+          <label class="choice-label" for="objective-2">2.</label>
           <input
             class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
             type="text"
+            name="objective-2"
             required
             placeholder="จุดประสงค์ในการสร้างความสัมพันธ์ / บริหารจัดการกับผู้มีส่วนได้ส่วนเสีย"
           />
@@ -146,19 +177,23 @@
           </div>
         </div>
         <div class="flex gap-x-3 my-4">
-          <label class="choice-label"><span>* </span>1.</label>
+          <label class="choice-label" for="important-1"
+            ><span>* </span>1.</label
+          >
           <input
             class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
             type="text"
+            name="important-1"
             required
             placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย"
           />
         </div>
         <div class="flex gap-x-3">
-          <label class="choice-label">2.</label>
+          <label class="choice-label" for="important-2">2.</label>
           <input
             class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
             type="text"
+            name="important-2"
             required
             placeholder="ประเด็นสำคัญของผู้มีส่วนได้ส่วนเสีย"
           />
@@ -176,19 +211,21 @@
           </div>
         </div>
         <div class="flex gap-x-3 my-4">
-          <label class="choice-label"><span>* </span>1.</label>
+          <label class="choice-label" for="issue-1"><span>* </span>1.</label>
           <input
             class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
             type="text"
+            name="issue-1"
             required
             placeholder="ปัญหาอุปสรรคเรื่องร้องเรียน"
           />
         </div>
         <div class="flex gap-x-3">
-          <label class="choice-label">2.</label>
+          <label class="choice-label" for="issue-2">2.</label>
           <input
             class="appearance-ouline border-1 rounded w-full py-2 px-4 text-gray-800 leading-tight focus:outline-none focus:bg-white"
             type="text"
+            name="issue-2"
             required
             placeholder="ปัญหาอุปสรรคเรื่องร้องเรียน"
           />
@@ -205,7 +242,7 @@
         <div class="grid grid-rows-1 gap-1">
           <label for="language-choice">ภาษาที่ใช้สื่อสาร</label>
           <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            class="border-1 rounded border-gray-200 text-gray-900 mb-6 block w-full p-2"
             name="language-choice"
           >
             <option value="" disabled selected hidden>
@@ -219,7 +256,7 @@
         <div class="grid grid-rows-1 gap-1">
           <label for="contact-date">วันที่ติดต่อได้</label>
           <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
+            class="border-1 rounded border-gray-200 text-gray-900 mb-6 block w-full p-2"
             name="contact-date"
           >
             <option value="" disabled selected hidden>
@@ -234,7 +271,7 @@
           <label for="contact-time">เวลาที่ติดต่อได้</label>
           <div class="flex">
             <select
-              class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2 mr-1"
+              class="border-1 rounded border-gray-200 text-gray-900 mb-6 block w-full p-2 mr-1"
               name="contact-time"
             >
               <option value="" disabled selected hidden>กรุณาเลือกเวลา</option>
@@ -244,7 +281,7 @@
             </select>
             <p style="font-size: 25px; align-self: center; height: 56px">ถึง</p>
             <select
-              class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2 mr-1 ml-1"
+              class="border-1 rounded border-gray-200 text-gray-900 mb-6 block w-full p-2 mr-1 ml-1"
               name="type-substake"
             >
               <option value="" disabled selected hidden>กรุณาเลือกเวลา</option>
@@ -534,7 +571,6 @@
               class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
               type="text"
               required
-              placeholder="ข้อมูลปัจจุบันของพนักงาน"
               disabled
             />
           </div>
@@ -582,7 +618,6 @@
               class="appearance-ouline border-1 rounded w-full p-2 text-gray-800 leading-tight focus:outline-none focus:bg-white"
               type="text"
               required
-              placeholder="ข้อมูลปัจจุบันของพนักงาน"
               disabled
             />
           </div>
@@ -596,64 +631,12 @@
       <div class="grid grid-cols-2 gap-4 grid-flow-row-dense">
         <div class="grid grid-rows-1 gap-1">
           <label for="type-stake"
-            ><fa-icon [icon]="faGlobe" style="color: #fe5000"></fa-icon>
+            ><fa-icon
+              [icon]="['fas', 'globe']"
+              style="color: #fe5000"
+            ></fa-icon>
             เว็ปไซต์</label
           >
-          <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
-            name="type-stake"
-          >
-            <option value="" disabled selected hidden>
-              เลือกประเภทของผู้มีส่วนได้ส่วนเสีย
-            </option>
-            <option *ngFor="let food of foods" [value]="food.value">
-              {{ food.viewValue }}
-            </option>
-          </select>
-        </div>
-        <div class="grid grid-rows-1 gap-1">
-          <label for="type-substake"
-            ><i class="fa-solid fa-envelope" style="color: #fe5000"></i
-            >อีเมล</label
-          >
-          <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
-            name="type-substake"
-          >
-            <option value="" disabled selected hidden>
-              เลือกประเภทย่อยของผู้มีส่วนได้ส่วนเสีย
-            </option>
-            <option *ngFor="let food of foods" [value]="food.value">
-              {{ food.viewValue }}
-            </option>
-          </select>
-        </div>
-        <div class="grid grid-rows-1 gap-1">
-          <label for="name-stake">ชื่อ Stakeholder</label>
-          <input
-            name="name-stake"
-            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
-            type="text"
-            required
-            placeholder="ชื่อ Stakeholder"
-          />
-        </div>
-        <div class="grid grid-rows-1 gap-1">
-          <label for="type-org">ประเภทหน่วยงาน</label>
-          <select
-            class="border-1 rounded border-gray-300 w-full text-gray-900 mb-6 block w-full p-2"
-            name="type-org"
-          >
-            <option value="" disabled selected hidden>
-              เลือกประเภทหน่วยงาน
-            </option>
-            <option *ngFor="let food of foods" [value]="food.value">
-              {{ food.viewValue }}
-            </option>
-          </select>
-        </div>
-        <div class="grid grid-rows-1 col-span-2 gap-1">
-          <label for="address">ที่อยู่ของหน่วยงาน</label>
           <input
             name="address"
             class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
@@ -663,33 +646,116 @@
           />
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <label for="type-substake">ระดับความสัมพันธ์ที่มีกับกฟน</label>
-          <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
-            name="type-substake"
+          <label for="type-substake"
+            ><fa-icon
+              [icon]="['fas', 'envelope']"
+              style="color: #fe5000"
+            ></fa-icon>
+            อีเมล</label
           >
-            <option value="" disabled selected hidden>
-              เลือกระดับความสัมพันธ์ที่มีกับกฟน
-            </option>
-            <option value="option1">ดีมาก</option>
-            <option value="option2">ดีแหละ</option>
-            <option value="option3">ดี๊ดี</option>
-          </select>
+          <input
+            name="address"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ที่อยู่ของหน่วยงาน"
+          />
         </div>
         <div class="grid grid-rows-1 gap-1">
-          <label for="type-substake">ระดับความสัมพันธ์ที่คาดหวัง</label>
-          <select
-            class="border-1 rounded border-gray-300 text-gray-900 mb-6 block w-full p-2"
-            name="type-substake"
+          <label for="name-stake"
+            ><fa-icon
+              [icon]="['fab', 'facebook']"
+              style="color: #0d6efd"
+            ></fa-icon>
+            Facebook</label
           >
-            <option value="" disabled selected hidden>
-              เลือกระดับความสัมพันธ์ที่คาดหวัง
-            </option>
-            <option value="option1">ดีมาก</option>
-            <option value="option2">ดีแหละ</option>
-            <option value="option3">ดี๊ดี</option>
-          </select>
+          <input
+            name="name-stake"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ชื่อ Stakeholder"
+          />
         </div>
+        <div class="grid grid-rows-1 gap-1">
+          <label for="type-org"
+            ><fa-icon
+              [icon]="['fab', 'twitter']"
+              style="color: #2991fc"
+            ></fa-icon>
+            Twitter / X</label
+          >
+          <input
+            name="address"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ที่อยู่ของหน่วยงาน"
+          />
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <label for="address"
+            ><fa-icon [icon]="['fab', 'line']" style="color: #06c755"></fa-icon>
+            LineOA</label
+          >
+          <input
+            name="address"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ที่อยู่ของหน่วยงาน"
+          />
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <label for="type-substake"
+            ><fa-icon
+              [icon]="['fab', 'instagram']"
+              style="color: #9747ff"
+            ></fa-icon>
+            Instagram</label
+          >
+          <input
+            name="address"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ที่อยู่ของหน่วยงาน"
+          />
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <label for="type-substake">
+            <fa-icon
+              [icon]="['fab', 'youtube']"
+              style="color: #fe0000"
+            ></fa-icon>
+            Youtube</label
+          >
+          <input
+            name="address"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ที่อยู่ของหน่วยงาน"
+          />
+        </div>
+        <div class="grid grid-rows-1 gap-1">
+          <label for="type-substake"> ช่องทางอื่นๆ</label>
+          <input
+            name="address"
+            class="appearance-none border-1 border-gray-300 rounded w-full p-2 text-gray-900 focus:outline-none focus:bg-white mb-6 block"
+            type="text"
+            required
+            placeholder="ที่อยู่ของหน่วยงาน"
+          />
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div class="flex justify-center my-5">
+        <button class="save-button text-white rounded-1 py-2 px-4">
+          บันทึกข้อมูล
+        </button>
       </div>
     </mat-card-content>
   </form>

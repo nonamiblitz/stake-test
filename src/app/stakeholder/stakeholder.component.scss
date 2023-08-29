@@ -23,8 +23,7 @@ h1 {
 .header-title {
   text-align: center;
   align-self: center;
-  margin-bottom: 10%;
-  margin-top: 10%;
+  margin-top: 1%;
 }
 
 .title-card {
@@ -112,4 +111,10 @@ select {
 
 .border-orange {
   border-color: $orange;
+}
+
+.save-button{
+  font-size: 27px;
+  font-weight: medium;
+  background-color: $orange;
 }
